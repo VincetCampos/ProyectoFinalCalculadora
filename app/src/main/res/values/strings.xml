@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="btn_Info">INFO</string>
+    <string name="txt_Info">INFO:</string>
+    <string name="txt_Uni">Universidad Mariano Gálvez</string>
+    <string name="txt_Exam">Examen Final</string>
+    <string name="txt_Fecha">Noviembre 2021</string>
+    <string name="btn_Back">Regresar</string>
+    <string name="btn_Clear">C</string>
+    <string name="btn_Divi">/</string>
+    <string name="btn_No7">7</string>
+    <string name="btn_No8">8</string>
+    <string name="btn_No9">9</string>
+    <string name="btn_Multi">*</string>
+    <string name="btn_No4">4</string>
+    <string name="btn_No5">5</string>
+    <string name="btn_No6">6</string>
+    <string name="btn_Resta">-</string>
+    <string name="btn_No1">1</string>
+    <string name="btn_No2">2</string>
+    <string name="btn_No3">3</string>
+    <string name="btn_Suma">+</string>
+    <string name="btn_No0">0</string>
+    <string name="btn_Punto">.</string>
+    <string name="btn_Operar">=</string>
+    <string name="txt_Inicio">0</string>
+</resources>
