@@ -64,28 +64,12 @@ class MainActivity : AppCompatActivity() {
 
         //Boton para limpiar la pantalla
         btnLimpiar.setOnClickListener{
-            num1 = 0.0F
-            num2 = 0.0F
-            tipoOperacion = 0
-            pantalla.text = ""
+            limpiarPantalla()
         }
 
         //Boton para obtener el resultado
         btnOperar.setOnClickListener{
-            var resultado = when(tipoOperacion){
-                1 -> num1+num2
-                2 -> num1-num2
-                3 -> num1*num2
-                4 -> num1/num2
-                else -> num1
-            }
-
-            pantalla.text = (if ("${resultado}".endsWith(".0")){
-                "${resultado}".replace(".0","")
-            }else{
-                "%.7f".format(resultado)
-            }).toString()
-
+            resolverOperacion()
         }
 
     }
@@ -109,6 +93,34 @@ class MainActivity : AppCompatActivity() {
     private fun operaciones(operacion : Int){
         var pantalla : TextView = findViewById(R.id.txtPantalla)
         tipoOperacion = operacion
-        pantalla.text = ""
+        pantalla.text = "0"
+    }
+
+    private fun resolverOperacion(){
+        var pantalla : TextView = findViewById(R.id.txtPantalla)
+        var resultado = when(tipoOperacion){
+            1 -> num1+num2
+            2 -> num1-num2
+            3 -> num1*num2
+            4 -> num1/num2
+            else -> num1
+        }
+
+        num1 = resultado
+
+        pantalla.text = (if ("${resultado}".endsWith(".0")){
+            "${resultado}".replace(".0","")
+        }else{
+            "%.7f".format(resultado)
+        }).toString()
+
+    }
+
+    private fun limpiarPantalla(){
+        var pantalla : TextView = findViewById(R.id.txtPantalla)
+        num1 = 0.0F
+        num2 = 0.0F
+        tipoOperacion = 0
+        pantalla.text = "0"
     }
 }
