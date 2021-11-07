@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setTitle("Vincet Alejandro Campos Samayoa")
 
-        var pantalla : TextView = findViewById(R.id.txtPantalla)
         val btnInfo : Button = findViewById(R.id.botonInfo)
         val intentInfo = Intent(this, InfoApp::class.java)
         val btn1 : Button = findViewById(R.id.boton1)
@@ -79,7 +78,12 @@ class MainActivity : AppCompatActivity() {
         if (pantalla.text == "0" && numero != "."){
             pantalla.text = "${numero}"
         }else{
-            pantalla.text = "${pantalla.text}${numero}"
+            if(pantalla.text.contains(".") && numero == "."){
+                Toast.makeText(this, "Ya hay un punto decimal", Toast.LENGTH_SHORT).show()
+            }else{
+                pantalla.text = "${pantalla.text}${numero}"
+            }
+            
         }
 
         if(tipoOperacion == 0){
